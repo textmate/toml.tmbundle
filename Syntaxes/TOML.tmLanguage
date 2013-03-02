@@ -169,7 +169,7 @@
 					<array>
 						<dict>
 							<key>match</key>
-							<string>\\[0tnr"\\]</string>
+							<string>\\([tnr"\\]|x\h\h)</string>
 							<key>name</key>
 							<string>constant.character.escape.toml</string>
 						</dict>
