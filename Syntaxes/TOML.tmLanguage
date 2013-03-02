@@ -104,13 +104,6 @@
 			<key>name</key>
 			<string>invalid.illegal.not-allowed-here.toml</string>
 		</dict>
-		<key>invalid_array</key>
-		<dict>
-			<key>match</key>
-			<string>\S[^]]*(?&lt;=\S)</string>
-			<key>name</key>
-			<string>invalid.illegal.not-allowed-here.toml</string>
-		</dict>
 		<key>key_pair</key>
 		<dict>
 			<key>begin</key>
@@ -249,7 +242,7 @@
 								</dict>
 								<dict>
 									<key>include</key>
-									<string>#invalids</string>
+									<string>#invalid</string>
 								</dict>
 							</array>
 						</dict>
