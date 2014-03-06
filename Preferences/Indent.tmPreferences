@@ -11,7 +11,7 @@
 		<key>decreaseIndentPattern</key>
 		<string>^\s*[\]]</string>
 		<key>disableIndentCorrections</key>
-		<string>1</string>
+		<true/>
 		<key>increaseIndentPattern</key>
 		<string>\[\s*(#.*)?$</string>
 		<key>indentOnPaste</key>
