@@ -137,6 +137,39 @@
 			<array>
 				<dict>
 					<key>begin</key>
+					<string>\G"""</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.toml</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>"""</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.toml</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>string.quoted.triple.double.toml</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>match</key>
+							<string>\\([tnr"\\]|x\h\h)</string>
+							<key>name</key>
+							<string>constant.character.escape.toml</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
 					<string>\G"</string>
 					<key>beginCaptures</key>
 					<dict>
@@ -167,6 +200,54 @@
 							<string>constant.character.escape.toml</string>
 						</dict>
 					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>\G'''</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.toml</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>'''</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.toml</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>string.quoted.triple.single.toml</string>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>\G'</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.toml</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>'</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.toml</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>string.quoted.single.toml</string>
 				</dict>
 				<dict>
 					<key>match</key>
