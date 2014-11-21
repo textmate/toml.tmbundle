@@ -269,7 +269,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\G-?[0-9]+</string>
+					<string>\G[+-]?(0|[1-9][0-9]*)</string>
 					<key>name</key>
 					<string>constant.numeric.integer.toml</string>
 				</dict>
