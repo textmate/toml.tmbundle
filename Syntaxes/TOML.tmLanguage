@@ -67,35 +67,71 @@
 		</dict>
 		<key>groups</key>
 		<dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
+			<key>patterns</key>
+			<array>
 				<dict>
-					<key>name</key>
-					<string>punctuation.definition.section.begin.toml</string>
-				</dict>
-				<key>2</key>
-				<dict>
-					<key>patterns</key>
-					<array>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
 						<dict>
-							<key>match</key>
-							<string>[^\s.]+</string>
 							<key>name</key>
-							<string>entity.name.section.toml</string>
+							<string>punctuation.definition.section.begin.toml</string>
 						</dict>
-					</array>
-				</dict>
-				<key>3</key>
-				<dict>
+						<key>2</key>
+						<dict>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>match</key>
+									<string>[^\s.]+</string>
+									<key>name</key>
+									<string>entity.name.section.toml</string>
+								</dict>
+							</array>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.section.begin.toml</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^\s*(\[)([^\[\]]*)(\])</string>
 					<key>name</key>
-					<string>punctuation.definition.section.begin.toml</string>
+					<string>meta.group.toml</string>
 				</dict>
-			</dict>
-			<key>match</key>
-			<string>^\s*(\[)([^\[\]]*)(\])</string>
-			<key>name</key>
-			<string>meta.group.toml</string>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.section.begin.toml</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>match</key>
+									<string>[^\s.]+</string>
+									<key>name</key>
+									<string>entity.name.section.toml</string>
+								</dict>
+							</array>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.section.begin.toml</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>^\s*(\[\[)([^\[\]]*)(\]\])</string>
+					<key>name</key>
+					<string>meta.group.double.toml</string>
+				</dict>
+			</array>
 		</dict>
 		<key>invalid</key>
 		<dict>
