@@ -353,7 +353,7 @@
 					<array>
 						<dict>
 							<key>begin</key>
-							<string>(?="|-?[0-9]|true|false|\[)</string>
+							<string>(?="|-?[0-9]|true|false|\[|\{)</string>
 							<key>end</key>
 							<string>,|(?=])</string>
 							<key>endCaptures</key>
@@ -387,6 +387,58 @@
 						<dict>
 							<key>include</key>
 							<string>#invalid</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>begin</key>
+					<string>\G\{</string>
+					<key>beginCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.inline-table.begin.toml</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>\}</string>
+					<key>endCaptures</key>
+					<dict>
+						<key>0</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.inline-table.end.toml</string>
+						</dict>
+					</dict>
+					<key>name</key>
+					<string>meta.inline-table.toml</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>begin</key>
+							<string>(?=\S)</string>
+							<key>end</key>
+							<string>,|(?=})</string>
+							<key>endCaptures</key>
+							<dict>
+								<key>0</key>
+								<dict>
+									<key>name</key>
+									<string>punctuation.separator.inline-table.toml</string>
+								</dict>
+							</dict>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>include</key>
+									<string>#key_pair</string>
+								</dict>
+							</array>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#comments</string>
 						</dict>
 					</array>
 				</dict>
