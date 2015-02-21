@@ -26,6 +26,10 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#quoted_key_pair</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#invalid</string>
 		</dict>
 	</array>
@@ -143,15 +147,52 @@
 		<key>key_pair</key>
 		<dict>
 			<key>begin</key>
-			<string>(\S+)\s*(=)\s*</string>
+			<string>([A-Za-z0-9_-]+)\s*(=)\s*</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>support.constant.toml</string>
+					<string>variable.other.key.toml</string>
 				</dict>
 				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.separator.key-value.toml</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?&lt;=\S)(?&lt;!=)|$</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#primatives</string>
+				</dict>
+			</array>
+		</dict>
+		<key>quoted_key_pair</key>
+		<dict>
+			<key>begin</key>
+			<string>((")(.*)("))\s*(=)\s*</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.other.key.toml</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.variable.begin.toml</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.variable.end.toml</string>
+				</dict>
+				<key>5</key>
 				<dict>
 					<key>name</key>
 					<string>punctuation.separator.key-value.toml</string>
