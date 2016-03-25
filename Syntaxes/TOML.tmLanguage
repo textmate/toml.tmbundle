@@ -230,6 +230,42 @@
 						</dict>
 					</array>
 				</dict>
+				<dict>
+					<key>begin</key>
+					<string>((')([^']*)('))\s*(=)\s*</string>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.key.toml</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.variable.begin.toml</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.variable.end.toml</string>
+						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.separator.key-value.toml</string>
+						</dict>
+					</dict>
+					<key>end</key>
+					<string>(?&lt;=\S)(?&lt;!=)|$</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#primatives</string>
+						</dict>
+					</array>
+				</dict>
 			</array>
 		</dict>
 		<key>primatives</key>
