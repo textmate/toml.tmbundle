@@ -191,7 +191,7 @@
 							<array>
 								<dict>
 									<key>match</key>
-									<string>\\([btnfr"\\]|u\h{4}|U\h{8})</string>
+									<string>\\([btnfr"\\]|u[0-9A-Fa-f]{4}|U[0-9A-Fa-f]{8})</string>
 									<key>name</key>
 									<string>constant.character.escape.toml</string>
 								</dict>
@@ -299,7 +299,7 @@
 					<array>
 						<dict>
 							<key>match</key>
-							<string>\\([btnfr"\\]|u\h{4}|U\h{8})</string>
+							<string>\\([btnfr"\\]|u[0-9A-Fa-f]{4}|U[0-9A-Fa-f]{8})</string>
 							<key>name</key>
 							<string>constant.character.escape.toml</string>
 						</dict>
@@ -338,7 +338,7 @@
 					<array>
 						<dict>
 							<key>match</key>
-							<string>\\([btnfr"\\]|u\h{4}|U\h{8})</string>
+							<string>\\([btnfr"\\]|u[0-9A-Fa-f]{4}|U[0-9A-Fa-f]{8})</string>
 							<key>name</key>
 							<string>constant.character.escape.toml</string>
 						</dict>
