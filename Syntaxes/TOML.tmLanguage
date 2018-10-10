@@ -535,9 +535,66 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>\G((0x\h(\h|_\h)*)|(0o[0-7]([0-7]|_[0-7])*)|(0b[01]([01]|_[01])*)|([+-]?inf)|([+-]?nan)|(([+-]?(0|([1-9](([0-9]|_[0-9])+)?)))(\.([0-9](([0-9]|_[0-9])+)?))?([eE]([+-]?(0|([1-9](([0-9]|_[0-9])+)?))))?))</string>
+					<string>\G0x\h(\h|_\h)*</string>
+					<key>name</key>
+					<string>constant.numeric.hex.toml</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\G0o[0-7]([0-7]|_[0-7])*</string>
+					<key>name</key>
+					<string>constant.numeric.octal.toml</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\G0b[01]([01]|_[01])*</string>
+					<key>name</key>
+					<string>constant.numeric.binary.toml</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\G[+-]?(inf|nan)</string>
 					<key>name</key>
 					<string>constant.numeric.toml</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?x)
+						\G
+						(
+						    [+-]?
+						    (
+								0
+							  | ([1-9](([0-9]|_[0-9])+)?)
+							)
+						)
+						(?=[.eE])
+						(
+						    \.
+						    ([0-9](([0-9]|_[0-9])+)?)
+						)?
+						(
+						    [eE]
+						    ([+-]?(0|([1-9](([0-9]|_[0-9])+)?)))
+						)?
+					</string>
+					<key>name</key>
+					<string>constant.numeric.float.toml</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?x)
+						\G
+						(
+						    [+-]?
+						    (
+								0
+							  | ([1-9](([0-9]|_[0-9])+)?)
+							)
+						)
+					</string>
+					<key>name</key>
+					<string>constant.numeric.integer.toml</string>
 				</dict>
 				<dict>
 					<key>begin</key>
