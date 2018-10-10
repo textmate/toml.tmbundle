@@ -266,6 +266,110 @@
 						</dict>
 					</array>
 				</dict>
+				<dict>
+					<key>begin</key>
+					<string>(?x)
+						(
+							(
+								(?:
+									[A-Za-z0-9_-]+				# Bare key
+								  | "  (?:[^"\\]|\\.)* "		# Double quoted key
+								  | ' [^']*          '		# Sindle quoted key
+								)
+								(?:
+									\s* \. \s*					# Dot
+								  | (?= \s* =)					#   or look-ahead for equals
+								)
+							){2,}								# Ensure at least one dot
+						)
+						\s*(=)\s*
+					</string>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>variable.other.key.toml</string>
+							<key>patterns</key>
+							<array>
+								<dict>
+									<key>match</key>
+									<string>\.</string>
+									<key>name</key>
+									<string>punctuation.separator.variable.toml</string>
+								</dict>
+								<dict>
+									<key>captures</key>
+									<dict>
+										<key>1</key>
+										<dict>
+											<key>name</key>
+											<string>punctuation.definition.variable.begin.toml</string>
+										</dict>
+										<key>2</key>
+										<dict>
+											<key>patterns</key>
+											<array>
+												<dict>
+													<key>match</key>
+													<string>\\([btnfr"\\]|u[0-9A-Fa-f]{4}|U[0-9A-Fa-f]{8})</string>
+													<key>name</key>
+													<string>constant.character.escape.toml</string>
+												</dict>
+												<dict>
+													<key>match</key>
+													<string>\\[^btnfr"\\]</string>
+													<key>name</key>
+													<string>invalid.illegal.escape.toml</string>
+												</dict>
+											</array>
+										</dict>
+										<key>3</key>
+										<dict>
+											<key>name</key>
+											<string>punctuation.definition.variable.end.toml</string>
+										</dict>
+									</dict>
+									<key>match</key>
+									<string>(")((?:[^"\\]|\\.)*)(")</string>
+								</dict>
+								<dict>
+									<key>captures</key>
+									<dict>
+										<key>1</key>
+										<dict>
+											<key>name</key>
+											<string>punctuation.definition.variable.begin.toml</string>
+										</dict>
+										<key>2</key>
+										<dict>
+											<key>name</key>
+											<string>punctuation.definition.variable.end.toml</string>
+										</dict>
+									</dict>
+									<key>match</key>
+									<string>(')[^']*(')</string>
+								</dict>
+							</array>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.separator.key-value.toml</string>
+						</dict>
+					</dict>
+					<key>comment</key>
+					<string>Dotted key</string>
+					<key>end</key>
+					<string>(?&lt;=\S)(?&lt;!=)|$</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>include</key>
+							<string>#primatives</string>
+						</dict>
+					</array>
+				</dict>
 			</array>
 		</dict>
 		<key>primatives</key>
