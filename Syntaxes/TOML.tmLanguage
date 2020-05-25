@@ -172,7 +172,7 @@
 				</dict>
 				<dict>
 					<key>begin</key>
-					<string>((")(.*)("))\s*(=)\s*</string>
+					<string>((")(.*?)("))\s*(=)\s*</string>
 					<key>captures</key>
 					<dict>
 						<key>1</key>
@@ -388,7 +388,7 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>"""</string>
+					<string>"{3,5}</string>
 					<key>endCaptures</key>
 					<dict>
 						<key>0</key>
@@ -466,7 +466,7 @@
 						</dict>
 					</dict>
 					<key>end</key>
-					<string>'''</string>
+					<string>'{3,5}</string>
 					<key>endCaptures</key>
 					<dict>
 						<key>0</key>
@@ -511,7 +511,7 @@
 						-
 						(?!00|3[2-9])[0-3][0-9]
 						(
-							[Tt]
+							[Tt ]
 							(?!2[5-9])[0-2][0-9]
 							:
 							[0-5][0-9]
@@ -526,6 +526,19 @@
 					</string>
 					<key>name</key>
 					<string>constant.other.date.toml</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>\G(?x)
+						(?!2[5-9])[0-2][0-9]
+						:
+						[0-5][0-9]
+						:
+						(?!6[1-9])[0-6][0-9]
+						(\.[0-9]+)?
+					</string>
+					<key>name</key>
+					<string>constant.other.time.toml</string>
 				</dict>
 				<dict>
 					<key>match</key>
@@ -575,7 +588,7 @@
 						)?
 						(
 						    [eE]
-						    ([+-]?(0|([1-9](([0-9]|_[0-9])+)?)))
+						    ([+-]?[0-9](([0-9]|_[0-9])+)?)
 						)?
 					</string>
 					<key>name</key>
